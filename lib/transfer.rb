@@ -30,7 +30,7 @@ class Transfer
     if @status == "complete" && valid? #&& sender.balance > amount
       amanda = (sender.balance += amount)
       avi = (receiver.balance -= amount)
-      @status = "complete"
+      @status = "reversed"
     else
       @status = "rejected"
       "Transaction rejected. Please check your account balance."
